@@ -1,0 +1,49 @@
+2025-02-20 08:26:37.792682: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1740057997.813769 2902429 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1740057997.819728 2902429 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-02-20 08:26:37.843002: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+I0220 08:26:47.859720 22397447660224 main.py:401] Seed: 0
+I0220 08:26:47.872033 22397447660224 utils.py:25] Experiment directory: /share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/LSTM/experiments/LSTM_T4
+I0220 08:26:47.939386 22397447660224 main.py:436] Model config: {
+    "address_embedder": {
+        "embed_dim": 64,
+        "max_vocab_size": 5000,
+        "type": "dynamic-vocab"
+    },
+    "cache_line_embedder": "address_embedder",
+    "cache_pc_embedder": "none",
+    "loss": [
+        "log_likelihood",
+        "reuse_dist"
+    ],
+    "lr": 0.001,
+    "lstm_hidden_size": 128,
+    "max_attention_history": 30,
+    "pc_embedder": {
+        "embed_dim": 64,
+        "max_vocab_size": 5000,
+        "type": "dynamic-vocab"
+    },
+    "positional_embedder": {
+        "embed_dim": 128,
+        "type": "positional"
+    },
+    "sequence_length": 80
+}
+I0220 08:26:47.995240 22397447660224 main.py:441] Cache config: {
+    "associativity": 16,
+    "cache_line_size": 64,
+    "capacity": 2097152
+}
+I0220 08:26:47.997176 22397447660224 main.py:448] DAgger config: {
+    "final": 1.0,
+    "initial": 0.0,
+    "num_steps": 200000,
+    "type": "linear",
+    "update_freq": 10000
+}
+I0220 08:26:48.018205 22397447660224 main.py:459] Device: cuda
+W0220 08:26:48.251507 22397447660224 model.py:405] Expects that all calls to loss are labeled with Belady's
+Initializing MemoryTrace:   0%|          | 0/10000000 [00:00<?, ?it/s]Initializing MemoryTrace:   2%|▏         | 186393/10000000 [00:00<00:05, 1863758.48it/s]Initializing MemoryTrace:   5%|▍         | 456055/10000000 [00:00<00:04, 2353630.07it/s]Initializing MemoryTrace:   7%|▋         | 743399/10000000 [00:00<00:03, 2590955.50it/s]Initializing MemoryTrace:  10%|█         | 1036745/10000000 [00:00<00:03, 2726152.52it/s]Initializing MemoryTrace:  13%|█▎        | 1334636/10000000 [00:00<00:03, 2817281.06it/s]Initializing MemoryTrace:  16%|█▋        | 1636085/10000000 [00:00<00:02, 2884318.10it/s]Initializing MemoryTrace:  19%|█▉        | 1940034/10000000 [00:00<00:02, 2935036.24it/s]Initializing MemoryTrace:  22%|██▏       | 2245426/10000000 [00:00<00:02, 2972870.09it/s]Initializing MemoryTrace:  26%|██▌       | 2551242/10000000 [00:00<00:02, 2999517.96it/s]Initializing MemoryTrace:  29%|██▊       | 2858035/10000000 [00:01<00:02, 3020625.48it/s]Initializing MemoryTrace:  32%|███▏      | 3165859/10000000 [00:01<00:02, 3038245.90it/s]Initializing MemoryTrace:  35%|███▍      | 3473939/10000000 [00:01<00:02, 3051178.79it/s]Initializing MemoryTrace:  38%|███▊      | 3782514/10000000 [00:01<00:02, 3061639.13it/s]Initializing MemoryTrace:  41%|████      | 4091340/10000000 [00:01<00:01, 3069667.47it/s]Initializing MemoryTrace:  44%|████▍     | 4400594/10000000 [00:01<00:01, 3076547.30it/s]Initializing MemoryTrace:  47%|████▋     | 4709971/10000000 [00:01<00:01, 3081716.69it/s]

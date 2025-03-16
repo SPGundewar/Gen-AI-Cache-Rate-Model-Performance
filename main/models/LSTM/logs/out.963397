@@ -1,0 +1,67 @@
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@gpu15>
+Subject: Job 963397: <LSTM_T3> in cluster <Hazel> Exited
+
+Job <LSTM_T3> was submitted from host <login02> by user <sgundew> in cluster <Hazel> at Wed Feb 19 18:41:23 2025
+Job was executed on host(s) <gpu15>, in queue <gpu>, as user <sgundew> in cluster <Hazel> at Thu Feb 20 08:26:29 2025
+</home/sgundew> was used as the home directory.
+</share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/LSTM/scripts> was used as the working directory.
+Started at Thu Feb 20 08:26:29 2025
+Terminated at Thu Feb 20 08:27:01 2025
+Results reported at Thu Feb 20 08:27:01 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -n 1
+#BSUB -W 48:00
+#BSUB -q gpu
+#BSUB -gpu "num=1"
+#BSUB -J LSTM_T3
+#BSUB -o /share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/LSTM/logs/out.%J
+#BSUB -e /share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/LSTM/logs/err.%J
+
+
+source ~/.bashrc
+conda activate /share/$GROUP/conda_env/new_env
+cd /share/$GROUP/$USER/GenAI-for-Systems-Gym/homework-1/models/LSTM
+
+python3 -m cache_replacement.policy_learning.cache_model.main \
+  --experiment_base_dir=/share/$GROUP/$USER/GenAI-for-Systems-Gym/homework-1/models/LSTM/experiments \
+  --experiment_name=LSTM_T3 \
+  --cache_configs=cache_replacement/policy_learning/cache/configs/default.json \
+  --model_bindings="loss=[\"ndcg\"]" \
+  --model_bindings="address_embedder.max_vocab_size=5000" \
+  --train_memtrace=cache_replacement/policy_learning/cache/traces/sample_trace.csv \
+  --valid_memtrace=cache_replacement/policy_learning/cache/traces/sample_trace.csv
+
+
+
+------------------------------------------------------------
+
+Exited with exit code 120.
+
+Resource usage summary:
+
+    CPU time :                                   15.88 sec.
+    Max Memory :                                 -
+    Average Memory :                             -
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   59 sec.
+    Turnaround time :                            49538 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/LSTM/logs/err.963397> for stderr output of this job.
+

@@ -1,0 +1,72 @@
+%%%%%%%%%%%%%%%%
+tensor([[0., 0.],
+        [0., 0.]])
+hi
+hi
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@gpu03>
+Subject: Job 64197: <rnn_hist_len_w_att_40> in cluster <Hazel> Exited
+
+Job <rnn_hist_len_w_att_40> was submitted from host <login02> by user <sgundew> in cluster <Hazel> at Tue Feb 25 22:00:23 2025
+Job was executed on host(s) <gpu03>, in queue <gpu>, as user <sgundew> in cluster <Hazel> at Wed Feb 26 00:03:09 2025
+</home/sgundew> was used as the home directory.
+</share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/RNN_with_Attention/scripts> was used as the working directory.
+Started at Wed Feb 26 00:03:09 2025
+Terminated at Fri Feb 28 00:02:59 2025
+Results reported at Fri Feb 28 00:02:59 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -n 1
+#BSUB -W 48:00
+#BSUB -q gpu
+#BSUB -gpu "num=1"
+#BSUB -J rnn_hist_len_w_att_40
+#BSUB -o /share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/RNN_with_Attention/logs/out.%J
+#BSUB -e /share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/RNN_with_Attention/logs/err.%J
+
+
+source ~/.bashrc
+conda activate /share/$GROUP/conda_env/new_env
+cd /share/$GROUP/$USER/GenAI-for-Systems-Gym/homework-1/models/RNN_with_Attention
+
+python3 -m cache_replacement.policy_learning.cache_model.main \
+  --experiment_base_dir=/share/$GROUP/$USER/GenAI-for-Systems-Gym/homework-1/models/RNN_with_Attention/experiments \
+  --experiment_name=rnn_hist_len_w_att_40 \
+  --cache_configs=cache_replacement/policy_learning/cache/configs/default.json \
+  --model_bindings="loss=[\"ndcg\", \"reuse_dist\"]" \
+  --model_bindings="sequence_length=40" \
+  --model_bindings="address_embedder.max_vocab_size=5000" \
+  --train_memtrace=/share/$GROUP/traces/astar_313B_train.csv \
+  --valid_memtrace=/share/$GROUP/traces/astar_313B_valid.csv
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   171547.00 sec.
+    Max Memory :                                 9 GB
+    Average Memory :                             7.96 GB
+    Total Requested Memory :                     -
+    Delta Memory :                               -
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                10
+    Run time :                                   172816 sec.
+    Turnaround time :                            180156 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file </share/csc591s25/sgundew/GenAI-for-Systems-Gym/homework-1/models/RNN_with_Attention/logs/err.64197> for stderr output of this job.
+
