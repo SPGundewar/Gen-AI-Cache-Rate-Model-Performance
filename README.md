@@ -135,19 +135,17 @@ python scripts/generate_report.py --results results/
 
 ### In-Memory Caching
 
-The repository implements efficient in-memory caching techniques that significantly reduce response times and API costs for similar queries. This approach is particularly valuable for applications where reducing latency is critical.
+Efficient in-memory caching techniques significantly reduce response times and API costs for similar queries, crucial for latency-sensitive applications.
 
 ### Semantic Caching
 
-Advanced semantic caching mechanisms store and retrieve cache entries based on the semantic meaning of queries rather than exact matches. This enables the system to identify and utilize cached results for semantically similar but syntactically different queries, improving hit rates substantially.
+Advanced semantic caching mechanisms retrieve cache entries based on query meaning rather than exact matches, improving hit rates for semantically similar queries.
 
 ### Context Caching
 
-For large token inputs, context caching reduces computational overhead by storing frequently used context that can be referenced in multiple queries. This is especially effective for applications that repeatedly use the same large context with different specific queries.
+For large token inputs, context caching reduces computational overhead by storing frequently used context, beneficial for repetitive queries with slight variations.
 
 ## Performance Metrics
-
-The repository includes tools to measure and visualize key performance metrics:
 
 - **Cache Hit Rate**: Percentage of requests served from cache
 - **Latency Reduction**: Time saved by using cache vs. computing results
@@ -156,15 +154,13 @@ The repository includes tools to measure and visualize key performance metrics:
 
 ## Case Studies
 
-The repository includes notebooks demonstrating real-world applications:
-
 1. **Web Service Optimization**: Implementing semantic caching to reduce API costs
 2. **High-Performance Computing**: Using context caching to accelerate repeated calculations
 3. **Resource-Constrained Environments**: Optimizing cache strategies for limited memory scenarios
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Please submit a Pull Request:
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/amazing-feature`)
@@ -174,12 +170,12 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Acknowledgements
 
-This repository builds upon the work of several important projects:
-- The well-established Championship Simulator - ChampSim
-- Previous research by Google Research & Stanford teams on the Parrot project
-- The Gen-AI for Systems Gym environment developed at NC State University
+This repository builds upon:
+- **Championship Simulator (ChampSim)**
+- **Google Research & Stanford's Parrot project**
+- **Gen-AI for Systems Gym at NC State University**
 
-This work is developed as part of the **ECE/CSC 592 - Generative AI for Systems** course at **NC State University**, under the guidance of **Dr. Samira Mirbagher Ajorpaz**.
+Developed as part of **ECE/CSC 592 - Generative AI for Systems** under **Dr. Samira Mirbagher Ajorpaz**.
 
 ## License
 
