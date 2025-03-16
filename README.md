@@ -105,7 +105,7 @@ git submodule update
 
 ```bash
 # Extract CPU traces from ChampSim
-python scripts/extract_traces.py --input  --output traces/
+python scripts/extract_traces.py --input <input_file> --output traces/
 
 # Generate features from traces
 python scripts/generate_features.py --traces traces/ --output data/features/
@@ -185,5 +185,3 @@ This work is developed as part of the **ECE/CSC 592 - Generative AI for Systems*
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
----
-Answer from Perplexity: pplx.ai/share
